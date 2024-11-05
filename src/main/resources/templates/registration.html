@@ -1,0 +1,114 @@
+<html th:replace="base::layout(~{::section})">
+	<head></head>
+	<body>
+		<section>
+			<h2 style="color: blue; text-align: center;">Student Registration Form</h2>
+			<div th:if="${msg}">
+				<p th:text="${msg}" style="color: green; text-align: center;"></p>
+			</div>
+			<form class="form-group" method="post" th:object="${dto}">
+				<table class="table table-bordered" style="margin: auto; width: 60%;">
+					<tr>
+						<td>Enter Enrollment No</td>
+						<td>
+							<input type="number" th:field="${dto.enrollmentno}" class="form-control" required/>
+						</td>
+					</tr>
+					<tr>
+						<td>Enter Name</td>
+						<td>
+						<input type="text" th:field="${dto.name}" class="form-control" required/>
+					</td>
+					</tr>
+					<tr>
+					<td>Enter Father Name</td>
+					<td>
+						<input type="text" th:field="${dto.fname}" class="form-control" required/>
+					</td>
+				</tr>
+				<tr>
+				<td>Enter Mother Name</td>
+				<td>
+				<input type="text" th:field="${dto.mname}" class="form-control" required/>
+			</td>
+			</tr>
+			<tr>
+			<td>Enter Name</td>
+			<td>
+			<input type="text" th:field="${dto.name}" class="form-control" required/>
+		</td>
+		</tr>
+		<tr>
+			<td>Select Gender</td>
+			<td>
+			<input type="radio" th:field="${dto.gender}" value="Male" class="form-check-input" required/>Male
+			<input type="radio" th:field="${dto.gender}" value="Female" class="form-check-input" required/>Female
+		</td>
+		</tr>
+		<tr>
+			<td>Enter Address</td>
+			<td>
+				<input type="text" th:field="${dto.address}" class="form-control" required/>
+			</td>
+		</tr>
+		<tr>
+			<td>Select Program</td>
+		<td>
+			<select th:field="${dto.program}" class="form-control">
+				<option value="B.Tech">B.Tech</option>
+				<option value="M.Tech">M.Tech</option>
+				<option value="BCA">BCA</option>
+				<option value="MCA">MCA</option>
+			</select>
+		</td>
+		</tr>
+        <tr>
+			<td>Select Branch</td>
+		<td>
+			<select th:field="${dto.branch}" class="form-control">
+				<option value="CS">Computer Science</option>
+				<option value="IT">Information Technology</option>
+				<option value="CA">Computer Science</option>
+			</select>
+		</td>
+		</tr>
+		<tr>
+					<td>Select Year</td>
+				<td>
+					<select th:field="${dto.year}" class="form-control">
+						<option value="First Year">First Year</option>
+						<option value="Second Year">Second Year</option>
+						<option value="Thrid Year">Thrid Year</option>
+						<option value="Final Year">Final Year</option>
+					</select>
+				</td>
+				</tr>
+				<tr>
+		<td>Enter Contact No</td>
+		<td>
+			<input type="number" th:field="${dto.contactno}" class="form-control" required/>
+		</td>
+	</tr>
+	<tr>
+						<td>Enter Email Address</td>
+						<td>
+							<input type="email" th:field="${dto.emailaddress}" class="form-control" required/>
+						</td>
+					</tr>
+					<tr>
+										<td>Enter Password</td>
+										<td>
+											<input type="password" th:field="${dto.password}" class="form-control" required/>
+										</td>
+									</tr>
+									<tr>
+										<td></td>
+										<td>
+											<button type="submit" class="btn btn-primary">Register</button>
+										</td>
+									</tr>
+				</table>
+			</form>
+		</section>
+	</body>
+</html>

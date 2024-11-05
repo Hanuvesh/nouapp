@@ -1,0 +1,33 @@
+<html th:replace="base::layout(~{::section})">
+	<head></head>
+	<body>
+		<section>
+			<h2 style="color: blue; text-align: center;">Student Login</h2>
+			<div th:if="${msg}">
+							<p th:text="${msg}" style="color: green; text-align: center;"></p>
+		 </div>
+			<form class="form-group" th:object="${dto}" method="post">
+				<table class="table table-bordered" style="width: 60%; margin:auto;">
+					<tr>
+						<td>Enter Enrollment No (User Id)</td>
+						<td>
+							<input type="number" th:field="${dto.enrollmentno}" class="form-control" required/>
+						</td> 
+					</tr>
+					<tr>
+			           <td>Enter Password</td>
+						<td>
+							<input type="password" th:field="${dto.password}" class="form-control" required/>
+										</td> 
+								</tr>
+								<tr>
+									<td></td>
+									<td>
+										<button type="submit" class="btn btn-primary">Login</button>
+									</td>
+								</tr>
+				</table>
+			</form>
+		</section>
+	</body>
+</html>
